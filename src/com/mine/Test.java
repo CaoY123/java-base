@@ -16,15 +16,16 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) {
-        IntHolder a = new IntHolder(5);
-        System.out.println(a.value);
-        func(a);
-        System.out.println(a.value);
+
     }
 
-    public static void func(IntHolder a) {
-        a.value = a.value * 3;
-    }
+}
+
+enum Season {
+    SPRING,
+    SUMMER,
+    AUTUMN,
+    WINTER
 }
 
 
