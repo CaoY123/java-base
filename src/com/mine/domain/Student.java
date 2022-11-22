@@ -7,10 +7,10 @@ import java.util.Objects;
  * @date 2022-11-22 1:15
  * @description 学生类，用于测试和练习
  */
-public class Student {
+public class Student extends Person{
     private Integer id;
     private String name;
-    private String age;
+    private Integer age;
     private String sex;
     private String address;
     private String email;
@@ -19,7 +19,7 @@ public class Student {
 
     }
 
-    public Student(Integer id, String name, String age, String sex, String address, String email) {
+    public Student(Integer id, String name, Integer age, String sex, String address, String email) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -44,11 +44,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -99,5 +99,17 @@ public class Student {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, age, sex, address, email);
+    }
+
+    /**
+     * 继承自抽象类Person的出现方法
+     */
+    @Override
+    public void sayHi() {
+        System.out.println("Hello, 大家好，我是一名学生。");
+    }
+
+    private void study() {
+        System.out.println("偷偷学习ing...");
     }
 }

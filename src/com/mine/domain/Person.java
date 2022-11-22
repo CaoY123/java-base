@@ -7,6 +7,8 @@ package com.mine.domain;
  */
 public abstract class Person {
 
-    abstract void sayHi();
+    public String info;
+
+    public abstract void sayHi();
 
 }
