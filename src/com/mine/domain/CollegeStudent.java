@@ -57,4 +57,8 @@ public class CollegeStudent extends Student{
     public int hashCode() {
         return Objects.hash(super.hashCode(), specialty);
     }
+
+    public static void sayHello() {
+        System.out.println("Hello, 大家好，我是一名大学生！");
+    }
 }
