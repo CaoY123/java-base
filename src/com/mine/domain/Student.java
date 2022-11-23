@@ -7,7 +7,7 @@ import java.util.Objects;
  * @date 2022-11-22 1:15
  * @description 学生类，用于测试和练习
  */
-public class Student extends Person{
+public class Student extends Person implements Comparable<Student>{
     private Integer id;
     private String name;
     private Integer age;
@@ -111,5 +111,11 @@ public class Student extends Person{
 
     private void study() {
         System.out.println("偷偷学习ing...");
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        // 通过年龄由大到小进行排序
+        return Integer.compare(this.age, o.age);
     }
 }

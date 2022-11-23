@@ -160,10 +160,10 @@ public class ClassTest {
 
     static {
         Student student1 = new Student(1, "张三", 20, "男", "上海", "zs@126.com");
-        Student student2 = new Student(2, "李四", 20, "女", "北京", "ls@qq.com");
-        Student student3 = new Student(3, "王五", 20, "女", "天津", "ww@163.com");
-        Student student4 = new Student(4, "赵六", 20, "男", "深圳", "zl@126.com");
-        Student student5 = new Student(5, "候七", 20, "男", "广东", "hq@qq.com");
+        Student student2 = new Student(2, "李四", 21, "女", "北京", "ls@qq.com");
+        Student student3 = new Student(3, "王五", 19, "女", "天津", "ww@163.com");
+        Student student4 = new Student(4, "赵六", 16, "男", "深圳", "zl@126.com");
+        Student student5 = new Student(5, "候七", 17, "男", "广东", "hq@qq.com");
         students = new Student[]{student1, student2, student3, student4, student5};
     }
 
@@ -207,5 +207,33 @@ public class ClassTest {
         List<Student> list = Arrays.asList(ClassTest.students);
         String str3 = new ObjectAnalyzer().toString(list);
         System.out.println(str3);
+    }
+
+    /**
+     * 反射获取CollegeStudent类中的static方法并执行
+     */
+    @Test
+    public void testStaticMethod() throws Exception {
+        Class<CollegeStudent> clazz = CollegeStudent.class;
+        Method sayHelloMethod = clazz.getDeclaredMethod("sayHello");
+        // 因为是静态方法，所以执行的时候不需要对象
+        sayHelloMethod.invoke(null);
+    }
+
+    /**
+     * 对于实现Comparable接口的测试
+     */
+    @Test
+    public void testImplementsComparable() {
+        System.out.println("排序前：");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println("***********************");
+        System.out.println("排序后：");
+        Arrays.sort(students);
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 }
