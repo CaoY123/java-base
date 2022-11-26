@@ -2,6 +2,8 @@ package com.mine;
 
 import org.junit.Test;
 
+import java.awt.event.ActionListener;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -25,8 +27,13 @@ public class LambdaTest {
         System.out.println("***************************");
         System.out.println("按照字符长度排序：");
         // 用Lambda表达式写排序规则
-        Arrays.sort(planets, (first, second) -> first.length() - second.length());
+        Arrays.sort(planets, (String first, String second) -> {return first.length() - second.length(); });
+//        Arrays.sort(planets, (first, second) -> first.length() - second.length());
         System.out.println(Arrays.toString(planets));
+        System.out.println("***************************");
+
+        // 另一个例子
+        ActionListener listener = event -> System.out.println("Time is + " + Instant.ofEpochMilli(event.getWhen()));
     }
 
     @Test
