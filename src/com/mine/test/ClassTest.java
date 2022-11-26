@@ -1,4 +1,4 @@
-package com.mine;
+package com.mine.test;
 
 import com.mine.domain.CollegeStudent;
 import com.mine.domain.Person;
@@ -9,7 +9,6 @@ import org.junit.Test;
 
 import java.lang.reflect.*;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
