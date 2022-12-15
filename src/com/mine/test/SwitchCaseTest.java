@@ -7,7 +7,7 @@ package com.mine.test;
  *
  * 开眼了，以前不知道还能这么写
  */
-public class SwitchTest {
+public class SwitchCaseTest {
 
     public static void main(String[] args) {
         int type = 2;
