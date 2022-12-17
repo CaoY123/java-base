@@ -1,6 +1,8 @@
 package com.mine.test;
 
 import com.mine.domain.Pair;
+import com.mine.domain.Person;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,5 +23,22 @@ public class PairTest {
         list.add(pair2);
         list.add(pair3);
         list.forEach(System.out::println);
+    }
+
+    /**
+     * 这里本质上是返回Pair.class
+     */
+    @Test
+    public void test1(){
+
+        Pair<String, String> pair1 = new Pair<>();
+        Pair<Person, Integer> pair2 = new Pair<>();
+        System.out.println(pair1.getClass() == pair2.getClass());
+    }
+
+    @Test
+    public void test2() {
+        // 不能创建参数类型的数组
+//        new Pair<String, String>[10];
     }
 }
