@@ -1,6 +1,4 @@
-package com.mine.collections;
-
-import org.junit.Test;
+package com.mine.collection;
 
 import java.util.*;
 
